@@ -22,6 +22,9 @@
 		},{
 			name: 'Stash',
 			value: 'Stash'
+		},{
+			name: 'Gogs',
+			value: 'Gogs'
 		}];
 
 //console.log(JSON.stringify(widgetConfig)); //"{"options":{"id":"repo0"}}"
@@ -118,6 +121,16 @@
 					collectorId: _.findWhere(ctrl.collectors, {name: 'Stash'}).id,
 					options: {
 						scm: 'Stash',
+						url: url,
+						branch: branch
+					}
+				};
+			} else if (repoTypeName.indexOf("Gogs") != -1) {
+
+				item = {
+					collectorId: _.findWhere(ctrl.collectors, {name: 'Gogs'}).id,
+					options: {
+						scm: 'Gogs',
 						url: url,
 						branch: branch
 					}
